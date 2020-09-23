@@ -58,72 +58,163 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Name</a>
                     <a class="dropdown-item" href="#">Setting</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </div>
     </nav>
 
 
+
     <div id="demo" class="carousel slide" data-ride="carousel">
 
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
+<!-- Indicators -->
+<ul class="carousel-indicators">
+  <li data-target="#demo" data-slide-to="0" class="active"></li>
+  <li data-target="#demo" data-slide-to="1"></li>
+  <li data-target="#demo" data-slide-to="2"></li>
+</ul>
 
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://source.unsplash.com/random" alt="Chicago" height="200" width="1080">
+
+
+
+
+
+<!-- The slideshow -->
+<div class="carousel-inner">
+<?php
+ include("dbConnection.php");
+
+ $query = "SELECT *FROM tbl_advertisement where img_id='1'";
+ $run= mysqli_query($con,$query);
+ 
+
+    while($fetch = mysqli_fetch_assoc($run)){?>
+    <div class="carousel-item active">
+    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
+  </div>
+    
+<?php
+}
+ 
+?>
+<?php
+ include("dbConnection.php");
+
+ $query = "SELECT *FROM tbl_advertisement  where img_id='2'";
+ $run= mysqli_query($con,$query);
+ 
+
+    while($fetch = mysqli_fetch_assoc($run)){?>
+    <div class="carousel-item active">
+    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
+  </div>
+    
+<?php
+}
+ 
+?>
+<?php
+ include("dbConnection.php");
+
+ $query = "SELECT *FROM tbl_advertisement  where img_id='3'";
+ $run= mysqli_query($con,$query);
+ 
+
+    while($fetch = mysqli_fetch_assoc($run)){?>
+    <div class="carousel-item active">
+    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
+  </div>
+    
+<?php
+}
+ 
+?>
+ 
+  
+</div>
+
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</a>
+</div>
+
+
+<hr>
+
+    <div class="container mt-5 mb-4"> 
+        <div class="row">
+            <div class="col-sm-2">
+
             </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/random" alt="Chicago" height="200" width="1080"  >
+            <div class="col-sm-8">
+            <form action="uploadimg.php" method="POST" enctype="multipart/form-data">
+      <select class="form-control" name="id">
+  <option> select Image</option>
+  <option value="1">Image 1</option>
+  <option value="2">Image 2</option>
+  <option value="3">Image 3</option>
+</select>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Discount</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="dis" placeholder="discount" required>
+  </div>
+  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="img" accept="image/*" required>
+                                        <label class="custom-file-label" for="customFile">Add Photo</label>
+                                    </div>
+  <button type="submit" name="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
             </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/random"  alt="New York" height="200" width="1080"  >
+            <div class="col-sm-2">
+
             </div>
+            
         </div>
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+
+
+
+
+        <div class="row">
+        <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Image Id</th>
+        <th>Delete</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+    <?php
+    
+    include("dbConnection.php");
+    $query ="SELECT *FROM tbl_advertisement ";
+    $run =mysqli_query($con,$query );
+    while($fetch = mysqli_fetch_assoc($run)){?>
+            <tr>
+            <td> <?php  echo $fetch['img_id']?></td>
+            
+
+            <td><button>Delete</button></td>
+            </tr>
+            <?php
+    }
+   
+    
+    ?>
+
+
+    </tbody>
+  </table>
+        </div>
     </div>
 
-    <div class="container">
-
-        <div>
-            <h3 class="badge badge-primary">image 1</h3>
-            <div class="form-group">
-                <input type="file" class="form-control-file border" name="file">
-            </div>
-            <button>submit</button>
-        </div>
-        <hr>
-
-        <div>
-            <h3 class="badge badge-primary">image 2</h3>
-            <div class="form-group">
-                <input type="file" class="form-control-file border" name="file">
-            </div>
-            <button>submit</button>
-        </div>
-        <hr>
-        <div>
-            <h3 class="badge badge-primary">image 2</h3>
-            <div class="form-group">
-                <input type="file" class="form-control-file border" name="file">
-            </div>
-            <button>submit</button>
-        </div>
-        <hr>
-
-    </div>
+      
+    
 
 </body>
 

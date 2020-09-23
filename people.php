@@ -1,3 +1,9 @@
+<?php
+include("dbConnection.php")
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,29 +80,29 @@
         </div>
         <div class="table-responsive">
             <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
+                <thead  style=background-color:black;>
+                    <tr style="color:white;" >
+                        <th  >Name</th>
+                        <th>Mobile</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td>Dooley</td>
-                        <td>july@example.com</td>
-                    </tr>
+                <?php
+                      $query = "SELECT * FROM tbl_reg ";
+                     $fire = mysqli_query($con,$query);
+                     if(mysqli_num_rows($fire)>0){
+                        while($user = mysqli_fetch_assoc($fire)){?>
+                             <tr>
+                              <td><?php echo $user['name']?></td>
+                              <td><?php echo $user['mobile'] ?></td>
+                              <td><?php echo $user['role'] ?></td>
+                              
+                        </tr>
+                             <?php
+                         }
+                 }
+            ?>
                 </tbody>
             </table>
         </div>

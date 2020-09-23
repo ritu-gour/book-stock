@@ -48,6 +48,12 @@ $name = $_SESSION['name'];
 
 <body class="bg-light">
 
+
+
+
+
+
+
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -76,7 +82,7 @@ $name = $_SESSION['name'];
 
             </ul>
             <div class="dropdown">
-                <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" width="30" height="30" class="rounded profilephoto my-2 my-sm-0  dropdown-toggle mr-5" alt="Cinque Terre" data-toggle="dropdown">
+                <img src="img/ritu.jpg" width="30" height="30" class="rounded profilephoto my-2 my-sm-0  dropdown-toggle mr-5" alt="Cinque Terre" data-toggle="dropdown">
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#"> <?php echo $name ?> </a>
                     <a class="dropdown-item" href="#"> <?php echo $user ?> </a>
@@ -85,6 +91,14 @@ $name = $_SESSION['name'];
                 </div>
             </div>
     </nav>
+<div>
+
+
+
+</div>
+
+
+
 
     <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -98,13 +112,13 @@ $name = $_SESSION['name'];
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="adverImg/1.png" class="img-fluid" alt="Los Angeles">
+                <img src="https://source.unsplash.com/1600x900/?books store"  width="300"   height="400" class="img-fluid" alt="Los Angeles">
             </div>
             <div class="carousel-item">
-                <img src="adverImg/1.png" class="img-fluid" alt="Chicago">
+                <img src="https://source.unsplash.com/1600x900/?books,pencil" width="300"   height="400"  class="img-fluid" alt="Chicago">
             </div>
             <div class="carousel-item">
-                <img src="adverImg/1.png" class="img-fluid" alt="New York">
+                <img src="https://source.unsplash.com/1600x900/?books,pen" width="300"   height="400"  class="img-fluid" alt="New York">
             </div>
         </div>
 
@@ -134,7 +148,7 @@ $name = $_SESSION['name'];
 
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Coding</h5>
                     </div>
@@ -143,7 +157,7 @@ $name = $_SESSION['name'];
 
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Coding</h5>
                     </div>
@@ -151,7 +165,7 @@ $name = $_SESSION['name'];
             </div>
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Coding</h5>
                     </div>
@@ -166,7 +180,7 @@ $name = $_SESSION['name'];
         <div class="row">
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Pen</h5>
                     </div>
@@ -174,7 +188,7 @@ $name = $_SESSION['name'];
             </div>
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">English</h5>
                     </div>
@@ -183,7 +197,7 @@ $name = $_SESSION['name'];
 
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Coding</h5>
                     </div>
@@ -197,7 +211,7 @@ $name = $_SESSION['name'];
         <div class="row">
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Pen</h5>
                     </div>
@@ -205,7 +219,7 @@ $name = $_SESSION['name'];
             </div>
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">English</h5>
                     </div>
@@ -214,7 +228,7 @@ $name = $_SESSION['name'];
 
             <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" class="card-img-top" alt="...">
+                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Coding</h5>
                     </div>

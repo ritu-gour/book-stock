@@ -15,13 +15,13 @@ if (isset($_POST['submit'])) {
     $mail->SMTPAuth = TRUE;
     $mail->SMTPSecure = "tls";
     $mail->Port     = 587;  
-    $mail->Username = "kumardeepak57118@gmail.com";
-    $mail->Password = "ShobhaMotee";
+    $mail->Username = "Your_email";
+    $mail->Password = "Your_password";
     $mail->Host     = "smtp.gmail.com";
     $mail->Mailer   = "smtp";
-    $mail->SetFrom("$email","Deepak");
+    $mail->SetFrom("$email","Your_name");
     $mail->AddReplyTo("$email", "$name");
-    $mail->AddAddress("warriorking778@gmail.com");
+    $mail->AddAddress("your_extra_email");
     $mail->Subject = $subject;
     $mail->WordWrap   = 80;
     $mail->MsgHTML($content);

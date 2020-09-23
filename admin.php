@@ -76,13 +76,14 @@ $role= $_SESSION['role1'];
     <h1 class="display-4">Welcome To Your Book Store</h1>
     <p class="lead">Book is your Best Friend</p>
   </div>
+ 
 
-  <!-- main  -->
+<!-- main  -->
   <div class="container">
     <div class="row">
-      <div class="col-sm-4"></div>
+  <div class="col-sm-4"></div>
 
-      <div class="col-sm-4 shadow rounded mt-5 mb-5">
+    <div class="col-sm-4 shadow rounded mt-5 mb-5">
         <h4 class="text-center"> Add Category</h4>
         <hr class="bg-danger" />
         <form action="#" method="POST">
@@ -105,6 +106,8 @@ $role= $_SESSION['role1'];
         </form>
       </div>
     </div>
+
+
     <div class="col-sm-4"></div>
   </div>
   </div>

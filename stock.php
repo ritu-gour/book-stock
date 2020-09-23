@@ -1,15 +1,29 @@
 <?php
 
+include("dbConnection.php");
+// $user = $_SESSION['umob1'];
+// $name = $_SESSION['name'];
+// $role= $_SESSION['role1'];
+// $shop_id =$_SESSION['shop_id'];
+// echo $shop_id;
+// echo $user;
+// echo $name;
+///// echo $role;
 
-$user = $_SESSION['umob1'];
-$name = $_SESSION['name'];
-$role= $_SESSION['role1'];
-$shop_id=$_SESSION['shop_id'];
-echo $shop_id;
-echo $user;
-echo $name;
-// echo $role;
 
+?>
+<?php
+//delete  data base
+if(isset($_GET['del'])){
+    $category_id = $_GET['del'];
+    $query = "DELETE FROM  tbl_category WHERE category_id= $category_id ";
+    $fire = mysqli_query($con,$query) or die("cen not DELETED the Database.".mysqli_error($con));
+    if($fire){
+        echo " Data Deleted form Database";
+    }else{
+        echo "Not Delete";
+        }
+}
 
 ?>
 
@@ -139,63 +153,121 @@ echo $name;
         </div>
 
         <div class="table-responsive">
-
+            <h1 align="center">Show Database</h1>
             <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Book Name</th>
-                        <th>Author</th>
-                        <th>ISBN</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>QTY</th>
-                        <th>Discount</th>
-                        <th>Delete</th>
-                        <th>Update</th>
+                <thead style=background-color:black; >
+                    <tr  style="color:white;">
+                        
+                        <th>Item Category</th>
+                        <th>Item Hompage</th>
+                        <th>Dbutton</th>
+                        <th>btnupdate</th>
+                      
+                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" width="30" height="30"" alt=""></td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>ISBN12</td>
-                        <td>Class 12</td>
-                        <td>121</td>
-                        <td class=" badge badge-success">11</td>
-                        <td>12%</td>
-                        <td><button>Delete</button></td>
-                        <td><button>Update</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" width="30" height="30"" alt=""></td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>ISBN12</td>
-                        <td>Class 12</td>
-                        <td>121</td>
-                        <td class=" badge badge-danger">3</td>
-                        <td>12%</td>
-                        <td><button>Delete</button></td>
-                        <td><button>Update</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" width="30" height="30"" alt=""></td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>ISBN12</td>
-                        <td>Class 12</td>
-                        <td>121</td>
-                        <td class=" badge badge-primary">6</td>
-                        <td>12%</td>
-                        <td><button>Delete</button></td>
-                        <td><button>Update</button></td>
-                    </tr>
+                    
+                      <?php
+                      $query = "SELECT * FROM tbl_category";
+                     $fire = mysqli_query($con,$query);
+                     if(mysqli_num_rows($fire)>0){
+                        while($user = mysqli_fetch_assoc($fire)){?>
+                             <tr>
+                              <td><?php echo $user['item_category']?></td>
+                              <td><?php echo $user['item_hompage'] ?></td>
+                            
+                             <td>
+                             <a  href=" <?php $_SERVER['PHP_SELF']?>?del=<?php echo $user['category_id']?>"
+                                    class="btn btn-sm btn-danger" >delete</a>
+
+                             </td>
+                             <td>
+                             
+                             <a class="btn btn-sm btn-warning"
+                                     href=" update1.php?upd=<?php echo $user['category_id']?>"
+                                     >Update</a>
+                             </td>
+                             </tr>
+                             <?php
+                         }
+                 }
+            ?>
+                        
+                  
+                   
                 </tbody>
             </table>
         </div>
-    </div>
+    <hr class="bg-Danger">
+        <div class="table-responsive">
+            <h1 align="center">Show Database</h1>
+           <h3>Add Product</h3>
+            <table class="table table-hover">
+                <thead style=background-color:black;>
+                    <tr style="color:white;" >
+                        
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                        <th>Item Category</th>
+                        <th>Item Stock</th>
+                        <th>Dbutton</th>
+                    
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                      <?php
+                      $query = "SELECT * FROM tbl_product ";
+                     $fire = mysqli_query($con,$query);
+                     if(mysqli_num_rows($fire)>0){
+                        while($user = mysqli_fetch_assoc($fire)){?>
+                             <tr>
+                              <td><?php echo $user['item_name']?></td>
+                              <td><?php echo $user['item_price'] ?></td>
+                              <td><?php echo $user['item_category'] ?></td>
+                              <td><?php echo $user['item_stock'] ?></td>
+                            
+                             <td>
+                             <a  href="<?php $_SERVER['PHP_SELF']?>?del1=<?php echo $user['item_id']?>"
+                                    class="btn btn-sm btn-danger" >Delete</a>
+
+                             </td>
+                             <td>
+                             <td>
+                              <a class="btn btn-sm btn-warning"
+                                     href=" update2.php?upd1=<?php echo $user['item_id']?>"
+                                     >Update</a>
+            
+                            </td>
+                             
+                             </td>
+                             </tr>
+                             <?php
+                         }
+                 }
+            ?>
+                        
+                  
+                   
+                </tbody>
+            </table>
+        </div>
+    
+<?php
+//delete  data base
+if(isset($_GET['del1'])){
+    $item_id = $_GET['del1'];
+    $query = "DELETE FROM  tbl_product WHERE item_id= $item_id ";
+    $fire = mysqli_query($con,$query) or die("cen not DELETED the Database.".mysqli_error($con));
+    if($fire){
+       echo " Data Deleted form Database";
+    }
+}
+
+
+?>
 
 
     <nav aria-label="Page navigation example">
