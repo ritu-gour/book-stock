@@ -63,48 +63,23 @@ if(isset($_GET['del'])){
 
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="admin.php">Book Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-               
-                   <button type="button" class="btn btn-primary text-left"data-toggle="modal" 
-                   data-target="#exampleModal">addproduct</button>
-                    
-                   </li>
-                      
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> 
-    </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="people.php">Stock</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="people.php">People</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="advertisement.php">Advertisement</a>
                 </li>
                 <li class="nav-item">
@@ -159,7 +134,7 @@ if(isset($_GET['del'])){
                     <tr  style="color:white;">
                         
                         <th>Item Category</th>
-                        <th>Item Hompage</th>
+                        
                         <th>Dbutton</th>
                         <th>btnupdate</th>
                       
@@ -175,7 +150,7 @@ if(isset($_GET['del'])){
                         while($user = mysqli_fetch_assoc($fire)){?>
                              <tr>
                               <td><?php echo $user['item_category']?></td>
-                              <td><?php echo $user['item_hompage'] ?></td>
+                             
                             
                              <td>
                              <a  href=" <?php $_SERVER['PHP_SELF']?>?del=<?php echo $user['category_id']?>"
@@ -269,16 +244,6 @@ if(isset($_GET['del1'])){
 
 ?>
 
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
 
 
 </body>

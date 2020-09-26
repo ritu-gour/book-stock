@@ -146,94 +146,83 @@ $name = $_SESSION['name'];
         <h4>Deal Of The Day</h4>
         <div class="row">
 
-            <div class="col-sm-4">
+        
+        <?php
+                include("dbConnection.php");
+                $query = "SELECT * FROM tbl_product  WHERE item_hompage='Deal Of The Day'";
+                $run = mysqli_query($con,$query) or die("con not.".mysqli_error($con));
+                while($fetch = mysqli_fetch_assoc($run)){
+                    
+                    ?>
+                    <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding</h5>
-                    </div>
+                <img src="img/ritu.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php  echo $fetch['item_category']?></h5>
                 </div>
+            </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <?php
+            }
 
-
-    <div class="container mt-4">
-        <h3>Top Brand Discount</h3>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Pen</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">English</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding</h5>
-                    </div>
-                </div>
-            </div>
+            ?>
+            
         </div>
     </div>
 
     <div class="container mt-4">
-        <h3>Popular Book</h3>
+        <h4>Top Brand Discount</h4>
         <div class="row">
-            <div class="col-sm-4">
+
+        
+        <?php
+                include("dbConnection.php");
+                $query = "SELECT * FROM tbl_product  WHERE item_hompage='Top Brand Discount'";
+                $run = mysqli_query($con,$query) or die("con not.".mysqli_error($con));
+                while($fetch = mysqli_fetch_assoc($run)){
+                    
+                    ?>
+                    <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Pen</h5>
-                    </div>
+                <img src="img/ritu.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php  echo $fetch['item_brand']?></h5>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">English</h5>
-                    </div>
-                </div>
             </div>
 
-            <div class="col-sm-4">
+            <?php
+            }
+
+            ?>
+            
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h4>Popular Book</h4>
+        <div class="row">
+        <?php
+                include("dbConnection.php");
+                $query = "SELECT * FROM tbl_product  WHERE item_hompage='Popular Book'";
+                $run = mysqli_query($con,$query) or die("con not.".mysqli_error($con));
+                while($fetch = mysqli_fetch_assoc($run)){
+                    
+                    ?>
+                    <div class="col-sm-4">
                 <div class="card mb-3">
-                    <img src="img/ritu.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding</h5>
-                    </div>
+                <img src="img/ritu.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php  echo $fetch['item_category']?></h5>
                 </div>
             </div>
+            </div>
+
+            <?php
+            }
+
+            ?>
+            
         </div>
     </div>
 

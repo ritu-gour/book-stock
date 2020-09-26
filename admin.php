@@ -20,11 +20,10 @@ $role= $_SESSION['role1'];
  include("dbConnection.php");
  if(isset($_POST['submit'])){
     $item_category = $_POST['item_category'];
-    $item_hompage = $_POST['item_hompage'];
-
-    $query = " INSERT INTO `tbl_category`( `item_category`, `item_hompage`)
-     VALUES ('$item_category','$item_hompage')";
-     $run = mysqli_query($con,$query);
+  
+    $query = " INSERT INTO `tbl_category`( `item_category`)
+     VALUES ('$item_category')";
+     $run = mysqli_query($con,$query) or die("con not insert the dataaz.".mysqli_error($con));
      if($run){
        echo "insert";
      }else{
@@ -93,11 +92,6 @@ $role= $_SESSION['role1'];
             <input type="text" class="form-control" id="item_category" name="item_category" required />
           </div>
          
-          <div class="form-group">
-            <label for="item_hompage">Item Hompage</label>
-            <input type="text" class="form-control" id="item_homoage" name="item_hompage" required />
-          </div>
-
           <div class="d-flex justify-content-between mb-3">
             <div>
               <button type="submit" name="submit" class="btn btn-success">Add</button>
