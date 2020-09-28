@@ -14,15 +14,16 @@ if(isset($_GET['upd'])){
 if(isset($_POST['btnsubmit1'])){
 
  $item_category = $_POST['item_category'];
- $item_hompage = $_POST['item_hompage'];
+ //$item_hompage = $_POST['item_hompage'];
+ 
 
-$query = "UPDATE tbl_category SET item_category='$item_category', item_hompage='$item_hompage'
+$query = "UPDATE tbl_category SET item_category='$item_category'
  WHERE  category_id= $category_id";
 $fire = mysqli_query($con ,$query) or die("can not update the database.".mysqli_error($con));
 
 if($fire)
  //echo "data update the succesfully";
-header("location:stock.php")
+header("location:stock.php");
 
 
 }
@@ -78,10 +79,10 @@ header("location:stock.php")
             <input  value= "<?php echo $user['item_category']?>" type="text" class="form-control" id="item_category" name="item_category" placeholder="itemcategory" required />
           </div>
          
-          <div class="form-group">
+         <!--- <div class="form-group">
             <label for="item_hompage">Item Hompage</label>
             <input value= "<?php echo $user ['item_hompage']?>" type="text" class="form-control" id="item_hompage" name="item_hompage" placeholder="itemhompage" required />
-          </div>
+          </div>-->
 
           <div class="d-flex justify-content-between mb-3">
             <div>

@@ -67,6 +67,15 @@ $role= $_SESSION['role1'];
         </li>
       </ul>
     </div>
+    <div class="dropdown">
+                <img src="img/ritu.jpg" width="30" height="30" class="rounded profilephoto my-2 my-sm-0  dropdown-toggle mr-5" alt="Cinque Terre" data-toggle="dropdown">
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Name</a>
+                    <a class="dropdown-item" href="#">Setting</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </div>
+
   </nav>
 
   <!-- jumbotraon  -->

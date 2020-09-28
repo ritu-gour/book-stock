@@ -87,7 +87,7 @@ if(isset($_GET['del'])){
                 </li>
             </ul>
             <div class="dropdown">
-                <img src="https://avatars2.githubusercontent.com/u/48873989?s=400&u=e84b2fdeb89ab044c8700c0ecffae801a26bedaa&v=4" width="30" height="30" class="rounded profilephoto my-2 my-sm-0  dropdown-toggle mr-5" alt="Cinque Terre" data-toggle="dropdown">
+                <img src="img/ritu.jpg" width="30" height="30" class="rounded profilephoto my-2 my-sm-0  dropdown-toggle mr-5" alt="Cinque Terre" data-toggle="dropdown">
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Name</a>
                     <a class="dropdown-item" href="#">Setting</a>
@@ -186,9 +186,10 @@ if(isset($_GET['del'])){
                         <th>Item Price</th>
                         <th>Item Category</th>
                         <th>Item Stock</th>
+                        <th>item Hompage</th>
                         <th>Dbutton</th>
-                    
-                        
+                        <th></th>
+                        <th>btnupdate</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -203,6 +204,7 @@ if(isset($_GET['del'])){
                               <td><?php echo $user['item_price'] ?></td>
                               <td><?php echo $user['item_category'] ?></td>
                               <td><?php echo $user['item_stock'] ?></td>
+                              <td><?php echo $user['item_hompage'] ?></td>
                             
                              <td>
                              <a  href="<?php $_SERVER['PHP_SELF']?>?del1=<?php echo $user['item_id']?>"

@@ -30,7 +30,7 @@
 
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Book Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,53 +84,21 @@
 <?php
  include("dbConnection.php");
 
- $query = "SELECT *FROM tbl_advertisement where img_id='1'";
+ $query = "SELECT * FROM tbl_advertisement";
  $run= mysqli_query($con,$query);
  
-
-    while($fetch = mysqli_fetch_assoc($run)){?>
-    <div class="carousel-item active">
-    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
-  </div>
-    
+ $x = "active";
+    while($fetch = mysqli_fetch_assoc($run))
+    { 
+      ?>
+    <div class="carousel-item <?php echo $x;?>">
+    <img src="img/<?php echo $fetch['img_name'];?>" alt="Los Angeles" width="100%" height="500" />
+  </div>    
 <?php
+$x = "";
 }
- 
 ?>
-<?php
- include("dbConnection.php");
 
- $query = "SELECT *FROM tbl_advertisement  where img_id='2'";
- $run= mysqli_query($con,$query);
- 
-
-    while($fetch = mysqli_fetch_assoc($run)){?>
-    <div class="carousel-item active">
-    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
-  </div>
-    
-<?php
-}
- 
-?>
-<?php
- include("dbConnection.php");
-
- $query = "SELECT *FROM tbl_advertisement  where img_id='3'";
- $run= mysqli_query($con,$query);
- 
-
-    while($fetch = mysqli_fetch_assoc($run)){?>
-    <div class="carousel-item active">
-    <img src="<?php echo $fetch['img_name']?>" alt="Los Angeles" width=100% height="500">
-  </div>
-    
-<?php
-}
- 
-?>
- 
-  
 </div>
 
 <!-- Left and right controls -->
@@ -152,12 +120,6 @@
             </div>
             <div class="col-sm-8">
             <form action="uploadimg.php" method="POST" enctype="multipart/form-data">
-      <select class="form-control" name="id">
-  <option> select Image</option>
-  <option value="1">Image 1</option>
-  <option value="2">Image 2</option>
-  <option value="3">Image 3</option>
-</select>
   <div class="form-group">
     <label for="exampleInputPassword1">Discount</label>
     <input type="text" class="form-control" id="exampleInputPassword1" name="dis" placeholder="discount" required>

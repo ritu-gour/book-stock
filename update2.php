@@ -18,14 +18,15 @@ if(isset($_GET['upd1'])){
  $item_price = $_POST['item_price'];
  $item_category=$_POST['item_category'];
  $item_stock=$_POST['item_stock'];
+ $item_hompage = $_POST['item_hompage'];
 
     $query = " UPDATE tbl_product SET item_name='$item_name', item_price='$item_price',
-    item_category='$item_category' ,item_stock='$item_stock' WHERE  item_id= $item_id";
+    item_category='$item_category' ,item_stock='$item_stock',item_hompage='$item_hompage' WHERE  item_id= $item_id";
     $fire = mysqli_query($con ,$query) or die("can not update the database.".mysqli_error($con));
 
 if($fire){
  // echo "data update the succesfully";
-header("location:stock.php") 
+header("location:stock.php") ;
 }else
 {
   echo "Not Update";
@@ -93,6 +94,10 @@ header("location:stock.php")
            <label for="item_brand">Item Brand  </label>
            <input  value= "<?php echo $user ['item_brand']?>"  type="text" class="form-control" id="item_brand" name="item_brand" placeholder="itembrand" required />
          </div>
+         <div class="form-group">
+            <label for="item_hompage">Item Hompage</label>
+            <input value= "<?php echo $user ['item_hompage']?>" type="text" class="form-control" id="item_hompage" name="item_hompage" placeholder="itemhompage" required />
+          </div>
          <div class="d-flex justify-content-between mb-3">
            <div>
              <button type="btnsubmit" name="btnsubmit" class="btn btn-success">Add</button>

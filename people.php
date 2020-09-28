@@ -52,7 +52,7 @@ include("dbConnection.php")
                 <li class="nav-item">
                     <a class="nav-link active" href="#">People</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="advertisement.php">Advertisement</a>
                 </li>
                 <li class="nav-item">
@@ -64,7 +64,7 @@ include("dbConnection.php")
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Name</a>
                     <a class="dropdown-item" href="#">Setting</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </div>
     </nav>
